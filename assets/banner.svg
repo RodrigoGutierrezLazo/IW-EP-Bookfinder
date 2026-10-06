@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="auto">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,700&amp;display=swap');
+      .title { font-family: 'Fraunces', Georgia, serif; font-size: 52px; font-weight: 600; fill: #20231f; }
+      .title-accent { fill: #245c49; font-style: italic; }
+      .brand-text { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 700; fill: #20231f; letter-spacing: -0.5px; }
+      .brand-green { fill: #245c49; }
+      .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; fill: #245c49; letter-spacing: 2px; }
+      .subtitle { font-family: 'DM Sans', sans-serif; font-size: 15px; fill: #65675f; }
+      .stamp-label { font-family: 'DM Sans', sans-serif; font-size: 8px; font-weight: 700; fill: #245c49; letter-spacing: 1.5px; }
+    </style>
+    <linearGradient id="paperGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7" />
+      <stop offset="100%" stop-color="#f2eee4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="340" rx="16" fill="url(#paperGrad)" stroke="#deddd4" stroke-width="2"/>
+
+  <!-- Top Decorative Border -->
+  <line x1="40" y1="64" x2="1160" y2="64" stroke="#e3e1d6" stroke-width="1" />
+
+  <!-- Brand Topbar -->
+  <g transform="translate(60, 26)">
+    <circle cx="16" cy="16" r="16" fill="#245c49"/>
+    <!-- Book glyph -->
+    <path d="M9 11c3-1 5.5-.3 7 1.5v10.5c-1.8-1.7-4.3-2.3-7-1.5V11Z" fill="none" stroke="#d7e77c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M23 11c-3-1-5.5-.3-7 1.5v10.5c1.8-1.7 4.3-2.3 7-1.5V11Z" fill="none" stroke="#d7e77c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="44" y="23" class="brand-text">book<tspan class="brand-green">finder</tspan></text>
+  </g>
+
+  <!-- Status Capsule -->
+  <g transform="translate(930, 26)">
+    <rect width="210" height="30" rx="15" fill="#e8ebdc" stroke="#d7dbcd" stroke-width="1"/>
+    <circle cx="18" cy="15" r="4" fill="#79a66e"/>
+    <text x="32" y="20" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#245c49">OPEN LIBRARY API · ONLINE</text>
+  </g>
+
+  <!-- Left Content Area -->
+  <g transform="translate(60, 110)">
+    <line x1="0" y1="6" x2="28" y2="6" stroke="#d2765d" stroke-width="2" />
+    <text x="38" y="10" class="eyebrow">TU PRÓXIMA IDEA EMPIEZA AQUÍ</text>
+    
+    <text x="0" y="70" class="title">Encuentra el libro</text>
+    <text x="0" y="125" class="title">que <tspan class="title-accent">te mueve.</tspan></text>
+    
+    <text x="0" y="165" class="subtitle">Explorador académico para estudiantes · Práctica Calificada EP (Ingeniería de Software)</text>
+  </g>
+
+  <!-- Right Art Illustration (Mirroring .welcome-art from the web app) -->
+  <g transform="translate(760, 90)">
+    <!-- Backdrop rounded panel -->
+    <rect x="0" y="0" width="380" height="210" rx="12" fill="#e4ebd7" stroke="#ced8be" stroke-width="1.5"/>
+    
+    <!-- Warm Sun -->
+    <circle cx="190" cy="80" r="54" fill="#e6bd78" opacity="0.9"/>
+    
+    <!-- Decorative Leaves / Spark -->
+    <path d="M300 40 C320 50, 325 70, 310 85 C295 70, 290 50, 300 40 Z" fill="#698768" opacity="0.8"/>
+    
+    <!-- Book 1 (Dark Green) -->
+    <g transform="translate(85, 80) rotate(14)">
+      <rect x="0" y="0" width="46" height="130" rx="3" fill="#245c49" stroke="#173e32" stroke-width="1.5"/>
+      <line x1="6" y1="12" x2="6" y2="118" stroke="#d7e77c" stroke-width="2"/>
+    </g>
+    
+    <!-- Book 2 (Terracotta / Coral) -->
+    <g transform="translate(150, 65) rotate(-4)">
+      <rect x="0" y="0" width="50" height="145" rx="3" fill="#d2765d" stroke="#ad5239" stroke-width="1.5"/>
+      <line x1="42" y1="12" x2="42" y2="133" stroke="#f4f1e9" stroke-width="2"/>
+    </g>
+    
+    <!-- Book 3 (Oat / Cream) -->
+    <g transform="translate(225, 88) rotate(-16)">
+      <rect x="0" y="0" width="42" height="120" rx="3" fill="#eae1c5" stroke="#c9bea0" stroke-width="1.5"/>
+      <line x1="8" y1="10" x2="8" y2="110" stroke="#777970" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Editorial Stamp (Lee / Descubre) -->
+  <g transform="translate(680, 110) rotate(10)">
+    <circle cx="36" cy="36" r="34" fill="#fdfbf7" stroke="#cfcfc0" stroke-width="1.5"/>
+    <text x="36" y="20" text-anchor="middle" class="stamp-label">LEE</text>
+    <path d="M22 28 c5-1.5 9-.5 14 2 v16 c-4-3-8-3.5-14-2 V28 Z" fill="none" stroke="#245c49" stroke-width="1.3"/>
+    <path d="M50 28 c-5-1.5-9-.5-14 2 v16 c4-3 8-3.5 14-2 V28 Z" fill="none" stroke="#245c49" stroke-width="1.3"/>
+    <text x="36" y="58" text-anchor="middle" class="stamp-label">DESCUBRE</text>
+  </g>
+</svg>
