@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1e9">
+    <meta name="description" content="Explora libros para tus estudios y crea tu lista de lectura.">
+    <title>BookFinder — Explorador de libros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/libros.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio" aria-label="BookFinder, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M5 7.5c4.5-1.3 8.2-.4 11 2.2v16c-2.8-2.6-6.5-3.5-11-2.2v-16Z"/><path d="M27 7.5c-4.5-1.3-8.2-.4-11 2.2v16c2.8-2.6 6.5-3.5 11-2.2v-16Z"/><path d="M16 9.7v16"/></svg>
+          </span>
+          <span>book<span class="brand-accent">finder</span></span>
+        </a>
+        <div class="topbar-note"><span class="live-dot"></span> Biblioteca abierta para mentes curiosas</div>
+        <button class="shelf-jump" id="shelf-jump" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16M4 12h16M4 18.5h16"/></svg>
+          <span>Mi lista</span>
+          <span class="header-count" id="header-count">0</span>
+        </button>
+      </header>
+
+      <main id="inicio">
+        <section class="search-hero" aria-labelledby="page-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> TU PRÓXIMA IDEA EMPIEZA AQUÍ</p>
+            <h1 id="page-title">Encuentra el libro<br>que <em>te mueve.</em></h1>
+            <p class="hero-description">Busca entre millones de libros y guarda los que acompañarán tu próxima sesión de estudio.</p>
+          </div>
+          <div class="hero-stamp" aria-hidden="true">
+            <span class="stamp-top">LEE</span>
+            <svg viewBox="0 0 52 52" fill="none"><path d="M8 13c7-2 13-.8 18 3.2V41c-5-4-11-5.2-18-3.2V13Z"/><path d="M44 13c-7-2-13-.8-18 3.2V41c5-4 11-5.2 18-3.2V13Z"/><path d="M26 16.2V41"/></svg>
+            <span class="stamp-bottom">DESCUBRE</span>
+          </div>
+          <form class="search-form" id="search-form" novalidate>
+            <label class="search-label" for="search-input">¿Qué quieres explorar?</label>
+            <div class="search-control" id="search-control">
+              <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.2 4.2"/></svg>
+              <input id="search-input" name="query" type="search" placeholder="Prueba con historia, biología, Borges..." autocomplete="off" aria-describedby="search-error">
+              <button class="search-submit" type="submit"><span>Buscar libros</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+            </div>
+            <p class="form-error" id="search-error" role="alert" hidden>Escribe un tema o palabra para empezar.</p>
+          </form>
+          <div class="quick-searches" aria-label="Búsquedas sugeridas">
+            <span>Explora:</span>
+            <button type="button" data-query="psicología">psicología</button>
+            <button type="button" data-query="astronomía">astronomía</button>
+            <button type="button" data-query="literatura latinoamericana">literatura latinoamericana</button>
+          </div>
+        </section>
+
+        <div class="workspace">
+          <section class="results-section" aria-labelledby="results-heading" aria-live="polite">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow section-eyebrow" id="results-kicker">PARA EMPEZAR</p>
+                <h2 id="results-heading">Un mundo por descubrir</h2>
+              </div>
+              <span class="result-count" id="result-count"></span>
+            </div>
+            <div class="results-grid" id="results-grid">
+              <div class="welcome-state">
+                <div class="welcome-art" aria-hidden="true">
+                  <span class="art-sun"></span><span class="art-book art-book-one"></span><span class="art-book art-book-two"></span><span class="art-book art-book-three"></span><span class="art-leaf"></span>
+                </div>
+                <div class="welcome-text">
+                  <span class="welcome-index">01 / CURIOSIDAD</span>
+                  <h3>Una buena búsqueda<br>abre muchas puertas.</h3>
+                  <p>Elige un tema arriba y deja que la biblioteca te sorprenda.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="reading-panel" id="reading-panel" aria-labelledby="reading-heading" tabindex="-1">
+            <div class="reading-heading">
+              <div class="reading-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.8c2.7-.7 5-.1 7 1.5v13c-2-1.6-4.3-2.2-7-1.5v-13Z"/><path d="M19 4.8c-2.7-.7-5-.1-7 1.5v13c2-1.6 4.3-2.2 7-1.5v-13Z"/></svg></div>
+              <div><p class="eyebrow section-eyebrow">TU ESPACIO</p><h2 id="reading-heading">Lista de lectura</h2></div>
+              <span class="shelf-count" id="shelf-count">0</span>
+            </div>
+            <p class="reading-intro">Ideas que vale la pena volver a abrir.</p>
+            <div class="reading-list" id="reading-list"></div>
+            <div class="reading-empty" id="reading-empty">
+              <div class="empty-shelf-icon" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
+              <p>Tu próxima lectura<br>empieza con un descubrimiento.</p>
+            </div>
+            <div class="reading-footer"><span class="footer-spark" aria-hidden="true">✳</span> Tu colección, guardada en este dispositivo</div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="site-footer"><span>BOOKFINDER <span class="footer-divider">/</span> 2026</span><span>Libros para cada pregunta.</span><a href="https://openlibrary.org" target="_blank" rel="noreferrer">Datos de Open Library <span aria-hidden="true">↗</span></a></footer>
+    </div>
+
+    <dialog class="book-dialog" id="book-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar ficha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
